@@ -1,10 +1,7 @@
 package rutasturisticas.api.aplicacion.servicios;
 
 import java.util.List;
-
-
 import org.springframework.stereotype.Service;
-
 import rutasturisticas.api.dominio.entidades.Pais;
 import rutasturisticas.api.infraestructura.repositorios.IPaisRepositorio;
 

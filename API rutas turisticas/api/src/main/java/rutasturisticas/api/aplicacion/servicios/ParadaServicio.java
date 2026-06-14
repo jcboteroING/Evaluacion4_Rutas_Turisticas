@@ -10,7 +10,7 @@ import rutasturisticas.api.infraestructura.repositorios.IParadaRepositorio;
 @Service
 public class ParadaServicio {
 
-    private IParadaRepositorio repositorio;
+    private final IParadaRepositorio repositorio;
 
         ParadaServicio(IParadaRepositorio repositorio) {
             this.repositorio = repositorio;
@@ -42,6 +42,7 @@ public class ParadaServicio {
         }
     }
 
-
-
+    public List<Parada> listarPorRuta(int idRuta) {
+        return repositorio.findByRutaId(idRuta);
+    }
 }

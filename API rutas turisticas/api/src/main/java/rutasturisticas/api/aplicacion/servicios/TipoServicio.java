@@ -1,23 +1,20 @@
 package rutasturisticas.api.aplicacion.servicios;
 
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
-
 import rutasturisticas.api.dominio.entidades.Tipo;
 import rutasturisticas.api.infraestructura.repositorios.ITipoRepositorio;
 
 @Service
 public class TipoServicio {
 
-    private ITipoRepositorio repositorio;
+    private final ITipoRepositorio repositorio;
     
     TipoServicio(ITipoRepositorio repositorio) {
         this.repositorio = repositorio;
     }
 
-       public List<Tipo> listar() {
+    public List<Tipo> listar() {
         return repositorio.findAll();
     }
 

@@ -15,6 +15,7 @@ import jakarta.persistence.Table;
 
 public class Parada {
 
+    
     @ManyToOne
     @JoinColumn(name = "idruta", referencedColumnName = "id", nullable = false)
     private Ruta ruta;
@@ -32,7 +33,7 @@ public class Parada {
     private String descripcion;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "secuencia_parada")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "secuencia_parada")
     @SequenceGenerator(name = "secuencia_parada", sequenceName = "parada_id_seq", allocationSize = 1)
 
     @Column(name = "id")

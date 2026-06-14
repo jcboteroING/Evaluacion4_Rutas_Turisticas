@@ -2,7 +2,7 @@ package rutasturisticas.api.presentacion.controladores;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,8 +19,11 @@ import rutasturisticas.api.dominio.entidades.Pais;
 @RequestMapping("/api/paises")
 public class PaisControlador {
 
-    @Autowired
-    private PaisServicio servicio;
+    private final PaisServicio servicio;
+
+    PaisControlador(PaisServicio servicio) {
+        this.servicio = servicio;
+    }
 
     @GetMapping("/")
     public List<Pais> listar() {

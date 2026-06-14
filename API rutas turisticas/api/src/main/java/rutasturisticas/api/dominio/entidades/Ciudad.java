@@ -26,13 +26,13 @@ public class Ciudad {
     private double latitud;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "secuencia_ciudad")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "secuencia_ciudad")
     @SequenceGenerator(name = "secuencia_ciudad", sequenceName = "secuencia_ciudad", allocationSize = 1)
 
     @Column(name = "id")
     private int id;
 
-    @Column(name = "nombre", length = 150, nullable = false, unique = true)
+    @Column(name = "nombre", length = 50, nullable = false, unique = true)
     private String nombre;
 
     public Ciudad() {

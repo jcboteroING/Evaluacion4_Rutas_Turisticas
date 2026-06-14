@@ -2,7 +2,7 @@ package rutasturisticas.api.aplicacion.servicios;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import rutasturisticas.api.dominio.entidades.Pais;
@@ -11,8 +11,11 @@ import rutasturisticas.api.infraestructura.repositorios.IPaisRepositorio;
 @Service
 public class PaisServicio {
 
-    @Autowired
-    private IPaisRepositorio repositorio;
+    private final IPaisRepositorio repositorio;
+
+    PaisServicio(IPaisRepositorio repositorio) {
+        this.repositorio = repositorio;
+    }
 
     public List<Pais> listar() {
         return repositorio.findAll();

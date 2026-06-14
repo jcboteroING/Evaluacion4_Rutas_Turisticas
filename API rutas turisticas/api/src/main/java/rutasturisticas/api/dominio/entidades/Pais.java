@@ -15,15 +15,15 @@ public class Pais {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "secuencia_pais")
-    @SequenceGenerator(name = "secuencia_pais", sequenceName = "secuencia_pais", allocationSize = 1)
+    @SequenceGenerator(name = "secuencia_pais", sequenceName = "pais_id_seq", allocationSize = 1)
 
     @Column(name = "id")
     private int id;
 
-    @Column(name = "pais", length = 100, nullable = false, unique = true)
+    @Column(name = "nombre", length = 50, nullable = false, unique = true)
     private String nombre;
 
-    @Column(name = "codigo_alfa2", length = 2, nullable = false, unique = true)
+    @Column(name = "codigoalfa2", length = 5, nullable = false, unique = true)
     private String codigoAlfa2;
 
     public Pais() {

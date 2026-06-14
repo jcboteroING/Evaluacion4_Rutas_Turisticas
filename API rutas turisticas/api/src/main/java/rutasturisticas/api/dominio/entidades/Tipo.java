@@ -9,18 +9,18 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tipo")
+@Table(name = "tipo") 
 
 public class Tipo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "secuencia_tipo")
-    @SequenceGenerator(name = "secuencia_tipo", sequenceName = "secuencia_tipo", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "secuencia_tipo")
+    @SequenceGenerator(name = "secuencia_tipo", sequenceName = "tipo_id_seq", allocationSize = 1)
 
     @Column(name = "id")
     private int id;
 
-    @Column(name = "tipo", length = 100, nullable = false, unique = true)
+    @Column(name = "nombre", length = 50, nullable = false, unique = true)
     private String nombre;
 
     public Tipo() {

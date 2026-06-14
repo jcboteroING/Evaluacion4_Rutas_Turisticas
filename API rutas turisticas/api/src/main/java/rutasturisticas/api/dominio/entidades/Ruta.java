@@ -23,18 +23,18 @@ public class Ruta {
     @JoinColumn(name = "idciudad", referencedColumnName = "id", nullable = false)
     private Ciudad ciudad;
 
-    @Column(name = "descripcion", length = 250, nullable = false)
+    @Column(name = "descripcion")
     private String descripcion;
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "secuencia_ruta")
-    @SequenceGenerator(name = "secuencia_ruta", sequenceName = "secuencia_ruta", allocationSize = 1)
+    @SequenceGenerator(name = "secuencia_ruta", sequenceName = "ruta_id_seq", allocationSize = 1)
 
     @Column(name = "id")
     private int id;
 
-    @Column(name = "ruta", length = 250, nullable = false)
+    @Column(name = "nombre", length = 50, nullable = false)
     private String nombre;
 
     public Ruta() {

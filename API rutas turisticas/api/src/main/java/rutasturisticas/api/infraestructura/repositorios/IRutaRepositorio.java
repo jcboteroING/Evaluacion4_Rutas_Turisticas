@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import rutasturisticas.api.dominio.entidades.RutaId;
 
 @Repository
-public interface Ruta extends JpaRepository<Ruta, RutaId> {
+public interface IRutaRepositorio extends JpaRepository<IRutaRepositorio, RutaId> {
 
 }

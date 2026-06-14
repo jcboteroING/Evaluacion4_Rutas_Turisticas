@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import rutasturisticas.api.dominio.entidades.CiudadId;
 
 @Repository
-public interface Ciudad extends JpaRepository<Ciudad, CiudadId> {
+public interface ICiudadRepositorio extends JpaRepository<ICiudadRepositorio, CiudadId> {
 
 }

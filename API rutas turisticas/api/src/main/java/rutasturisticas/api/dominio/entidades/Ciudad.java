@@ -19,10 +19,10 @@ public class Ciudad {
     @JoinColumn(name = "idpais", referencedColumnName = "id", nullable = false)
     private Pais pais;
 
-    @Column(name = "longitud", nullable = false, unique = true)
+    @Column(name = "longitud", nullable = false)
     private double longitud;
 
-    @Column(name = "latitud", nullable = false, unique = true)
+    @Column(name = "latitud", nullable = false)
     private double latitud;
 
     @Id
@@ -32,7 +32,7 @@ public class Ciudad {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "ciudad", length = 150, nullable = false, unique = true)
+    @Column(name = "nombre", length = 150, nullable = false, unique = true)
     private String nombre;
 
     public Ciudad() {

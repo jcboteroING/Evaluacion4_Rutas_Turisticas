@@ -25,20 +25,20 @@ public class Parada {
     @Column(name = "latitud", nullable = false)
     private double latitud;
 
-    @Column(name = "tiempo", nullable = false)
-    private double tiempo;
+    @Column(name = "tiempo")
+    private int tiempo;
 
-    @Column(name = "descripcion", length = 250)
+    @Column(name = "descripcion")
     private String descripcion;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "secuencia_parada")
-    @SequenceGenerator(name = "secuencia_parada", sequenceName = "secuencia_parada", allocationSize = 1)
+    @SequenceGenerator(name = "secuencia_parada", sequenceName = "parada_id_seq", allocationSize = 1)
 
     @Column(name = "id")
     private int id;
 
-    @Column(name = "parada", length = 250, nullable = false)
+    @Column(name = "nombre", length = 50, nullable = false)
     private String nombre;
 
     @Column(name = "orden", nullable = false)
@@ -47,7 +47,7 @@ public class Parada {
     public Parada() {
     }
 
-    public Parada(Ruta ruta, double longitud, double latitud, double tiempo, String descripcion, int id, String nombre,
+    public Parada(Ruta ruta, double longitud, double latitud, int tiempo, String descripcion, int id, String nombre,
             int orden) {
         this.ruta = ruta;
         this.longitud = longitud;
@@ -83,11 +83,11 @@ public class Parada {
         this.latitud = latitud;
     }
 
-    public double getTiempo() {
+    public int getTiempo() {
         return tiempo;
     }
 
-    public void setTiempo(double tiempo) {
+    public void setTiempo(int tiempo) {
         this.tiempo = tiempo;
     }
 

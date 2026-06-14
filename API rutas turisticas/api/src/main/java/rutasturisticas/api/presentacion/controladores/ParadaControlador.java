@@ -16,16 +16,16 @@ import rutasturisticas.api.aplicacion.servicios.ParadaServicio;
 import rutasturisticas.api.dominio.entidades.Parada;
 
 @RestController
-@RequestMapping("/api/paradas")
+@RequestMapping("/api/paradas/")
 public class ParadaControlador {
 
     private final ParadaServicio servicio;
 
-    ParadaControlador(ParadaServicio servicio) {
+    public ParadaControlador(ParadaServicio servicio) {
         this.servicio = servicio;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<Parada> listar() {
         return servicio.listar();
     }
@@ -35,12 +35,12 @@ public class ParadaControlador {
         return servicio.get(id);
     }
 
-    @PostMapping("/")
+    @PostMapping
     public Parada agregar(@RequestBody Parada parada) {
         return servicio.agregar(parada);
     }
 
-    @PutMapping("/")
+    @PutMapping
     public Parada modificar(@RequestBody Parada parada) {
         return servicio.modificar(parada);
     }
@@ -54,7 +54,7 @@ public class ParadaControlador {
     public List<Parada> listarPorRuta(@PathVariable int idRuta) {
         return servicio.listarPorRuta(idRuta);
 
-        
+
     }
 
 

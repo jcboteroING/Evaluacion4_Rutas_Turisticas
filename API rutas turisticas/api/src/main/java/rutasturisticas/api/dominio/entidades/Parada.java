@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 public class Parada {
 
     @ManyToOne
-    @JoinColumn(name = "id_ruta", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "idruta", referencedColumnName = "id", nullable = false)
     private Ruta ruta;
 
     @Column(name = "longitud", nullable = false)

@@ -16,7 +16,7 @@ public class Ciudad {
 
     
     @ManyToOne
-    @JoinColumn(name = "id_pais", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "idpais", referencedColumnName = "id", nullable = false)
     private Pais pais;
 
     @Column(name = "longitud", nullable = false, unique = true)

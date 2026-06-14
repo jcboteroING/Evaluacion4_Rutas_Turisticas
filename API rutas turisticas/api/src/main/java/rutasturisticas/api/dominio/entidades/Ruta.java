@@ -16,11 +16,11 @@ import jakarta.persistence.Table;
 public class Ruta {
 
     @ManyToOne
-    @JoinColumn(name = "id_tipo", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "idtipo", referencedColumnName = "id", nullable = false)
     private Tipo tipo;
 
     @ManyToOne
-    @JoinColumn(name = "id_ciudad", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "idciudad", referencedColumnName = "id", nullable = false)
     private Ciudad ciudad;
 
     @Column(name = "descripcion", length = 250, nullable = false)
